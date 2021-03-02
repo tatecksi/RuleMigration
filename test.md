@@ -1,6 +1,6 @@
 <h1>Sample Rule Mapping between ArcSight/QRadar and Azure Sentinel</h1>
 <br />
-<h2><u>ArcSight</u></h2>
+<h2>ArcSight</h2>
 <br />
 
 | No. 	| Type         	| Sample Detection Rule                       	| Sample KQL 	| Reference      	|
