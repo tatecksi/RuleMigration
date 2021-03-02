@@ -1,4 +1,4 @@
-<h1>Sample Rule Criteria Mapping for ArcSight/QRadar -> Azure Sentinel</h1>
+<h1>Sample Rule Mapping between ArcSight/QRadar and Azure Sentinel</h1>
 <br />
 <h2><u>ArcSight</u></h2>
 <br />
