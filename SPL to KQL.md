@@ -5,7 +5,7 @@
 <sub>**SPL Command** | <sub>**Description** | <sub>**SPL Example** | <sub>**KQL** | <sub>**KQL Example** | 
 --- | --- | --- | --- | --- | 
 <sub>chart/ timechart | <sub>Returns results in a tabular output for (time-series) charting. | |<sub>[render](https://docs.microsoft.com/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer) |<sub><pre> … \| render timechart</pre> 
-dedup | <sub>Removes subsequent results that match a specified criterion. | |<sub>[distinct](https://docs.microsoft.com/azure/data-explorer/kusto/query/distinctoperator) <br /> [summarize](https://docs.microsoft.com/azure/data-explorer/kusto/query/summarizeoperator)  | <pre>… \| summarize by Computer, EventID </pre>	
+<sub>dedup | <sub>Removes subsequent results that match a specified criterion. | |<sub>[distinct](https://docs.microsoft.com/azure/data-explorer/kusto/query/distinctoperator) <br /> [summarize](https://docs.microsoft.com/azure/data-explorer/kusto/query/summarizeoperator)<sub/>  | <sub><pre>… \| summarize by Computer, EventID </pre>	
 eval | Calculates an expression.  See COMMON EVAL FUNCTIONS. | | [extend](https://docs.microsoft.com/azure/data-explorer/kusto/query/extendoperator) | <pre>T \| extend duration = endTime - startTime</pre> 
 fields | Removes fields from search results. | | [project](https://docs.microsoft.com/azure/data-explorer/kusto/query/projectoperator) <br /> [project-away](https://docs.microsoft.com/azure/data-explorer/kusto/query/projectawayoperator) | <pre>T \| project cost=price*quantity, price</pre>	
 head/tail | Returns the first/last N results. |  | [top](https://docs.microsoft.com/azure/data-explorer/kusto/query/topoperator) | <pre> T \| top 5 by Name desc nulls last </pre>
