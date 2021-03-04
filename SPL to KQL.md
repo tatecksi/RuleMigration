@@ -2,7 +2,7 @@
 <h2><u>Common Search Commands</u></h2>
 <br />
 
-<sub>SPL Command | Description | SPL Example | KQL | KQL Example <sub/>| 
+<sub>**SPL Command** | <sub>**Description** | <sub>**SPL Example** | <sub>**KQL** | <sub>**KQL Example** | 
 --- | --- | --- | --- | --- | 
 chart/ timechart | Returns results in a tabular output for (time-series) charting. | |[render](https://docs.microsoft.com/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer) |<pre> … \| render timechart</pre> 
 dedup | Removes subsequent results that match a specified criterion. | |[distinct](https://docs.microsoft.com/azure/data-explorer/kusto/query/distinctoperator) <br /> [summarize](https://docs.microsoft.com/azure/data-explorer/kusto/query/summarizeoperator)  | <pre>… \| summarize by Computer, EventID </pre>	
