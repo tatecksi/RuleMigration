@@ -32,14 +32,14 @@
 <h2><u>Common Eval Commands</u></h2>
 <br />
 
-SPL Command | Description | SPL Example | KQL | KQL Example | 
+<sub>**SPL Command** | <sub>**Description** | <sub>**SPL Example** | <sub>**KQL** | <sub>**KQL Example** | 
 --- | --- | --- | --- | --- | 
-abs(X) | Returns the absolute value of X. | abs(number) | [abs()](https://docs.microsoft.com/azure/data-explorer/kusto/query/abs-function) | <pre>abs(X)</pre>
+<sub>abs(X) | Returns the absolute value of X. | abs(number) | [abs()](https://docs.microsoft.com/azure/data-explorer/kusto/query/abs-function) | <pre>abs(X)</pre>
 case(X,"Y",…) | Takes pairs of arguments X and Y, where X arguments are Boolean expressions. When evaluated to TRUE, the arguments return the corresponding Y argument. | case(error == 404, "Not found", error == 500,"Internal Server Error", error == 200, "OK") | [case](https://docs.microsoft.com/azure/data-explorer/kusto/query/casefunction) | <pre>T<br />\| extend Message = case(error == 404, "Not found", error == 500,"Internal Server Error", "OK") </pre>
-ceil(X) | Ceiling of a number X. | ceil(1.9) | [ceiling()](https://docs.microsoft.com/azure/data-explorer/kusto/query/ceilingfunction) | <pre>ceiling(1.9)</pre>
+<sub>ceil(X) | Ceiling of a number X. | ceil(1.9) | [ceiling()](https://docs.microsoft.com/azure/data-explorer/kusto/query/ceilingfunction) | <pre>ceiling(1.9)</pre>
 cidrmatch("X",Y) | Identifies IP addresses that belong to a particular subnet.  | cidrmatch("123.132.32.0/25",ip) | [ipv4_is_match()](https://docs.microsoft.com/azure/data-explorer/kusto/query/ipv4-is-matchfunction)<br />[ipv6_is_match()](https://docs.microsoft.com/azure/data-explorer/kusto/query/ipv6-is-matchfunction) | <pre>ipv4_is_match('192.168.1.1', '192.168.1.255') == false</pre>
-coalesce(X,…) | Returns the first value that is not null. | coalesce(null(), "Returned val", null()) | [coalesce()](https://docs.microsoft.com/azure/data-explorer/kusto/query/coalescefunction) | <pre>coalesce(tolong("not a number"), tolong("42"), 33) == 42</pre>
-cos(X) | Calculates the cosine of X. | n=cos(0) | [cos()](https://docs.microsoft.com/azure/data-explorer/kusto/query/cosfunction) | <pre>cos(X)</pre>
+<sub>coalesce(X,…) | Returns the first value that is not null. | coalesce(null(), "Returned val", null()) | [coalesce()](https://docs.microsoft.com/azure/data-explorer/kusto/query/coalescefunction) | <pre>coalesce(tolong("not a number"), tolong("42"), 33) == 42</pre>
+<sub>cos(X) | Calculates the cosine of X. | n=cos(0) | [cos()](https://docs.microsoft.com/azure/data-explorer/kusto/query/cosfunction) | <pre>cos(X)</pre>
 exact(X) | Evaluates an expression X using double precision floating point arithmetic. | exact(3.14*num) | [todecimal()](https://docs.microsoft.com/azure/data-explorer/kusto/query/todecimalfunction) | <pre>todecimal(3.14*2)</pre>
 exp(X) | Returns eX. | exp(3) | [exp()](https://docs.microsoft.com/azure/data-explorer/kusto/query/exp-function) | <pre>exp(3)</pre>
 if(X,Y,Z) | If X evaluates to TRUE, the result is the second argument Y. If X evaluates to FALSE, the result evaluates to the third argument Z. | if(error==200, "OK", "Error") | [iif()](https://docs.microsoft.com/azure/data-explorer/kusto/query/iiffunction) | <pre>iif(floor(Timestamp, 1d)==floor(now(), 1d), "today", "anotherday")</pre>
