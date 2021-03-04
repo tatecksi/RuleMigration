@@ -23,8 +23,7 @@
 <sub>**streamstats** | <sub>Find the cumulative sum | <sub>... \| streamstats sum(bytes) as bytes _ total \| timechart | |
 <sub>**anomalydetection** |<sub> Find anomalies in the field | <sub>sourcetype=nasdaq earliest=-10y <br />\| anomalydetection Close _ Price | <sub>[series_decompose_<br />anomalies()](https://docs.microsoft.com/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction) | <sub><pre>let LookBackPeriod= 7d;<br />let disableAccountLogon=SignIn<br />\| where ResultType == "50057"<br />\| where ResultDescription has "account is disabled";<br />disableAccountLogon<br />\| make-series Trend=count() default=0 on TimeGenerated <br />in range(startofday(ago(LookBackPeriod)), now(), 1d)<br />\| extend (RSquare,Slope,Variance,RVariance,Interception,<br />LineFit)=series_fit_line(Trend)<br />\| extend (anomalies,score) = <br />series_decompose_anomalies(Trend)</pre>
 <sub>**where** | <sub>Filters search results using eval expressions. Used to  compare two different fields. | | <sub>[where](https://docs.microsoft.com/azure/data-explorer/kusto/query/whereoperator) | <sub><pre>T \| where fruit=="apple"</pre>
- |  | | | | 
- 
+  
 <br />
 <br />
 <br />
