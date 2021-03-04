@@ -92,7 +92,7 @@
 SPL Command | Description | KQL | KQL Example | 
 --- | --- | --- | --- | 
 avg(X) | Returns the average of the values of field X. | [avg()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/avg-aggfunction) | <pre>avg(X)</pre>
-count(X) | Returns the number of occurrences of the field X. To indicate a specific field value to match, format X as eval(field="value"). | | [count()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/count-aggfunction) | <pre>summarize count()</pre>
+count(X) | Returns the number of occurrences of the field X. To indicate a specific field value to match, format X as eval(field="value"). | [count()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/count-aggfunction) | <pre>summarize count()</pre>
 dc(X) | Returns the count of distinct values of the field X. | [dcount()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/dcount-aggfunction) | <pre>…\| summarize countries=dcount(country) by continent</pre>
 earliest(X) | Returns the chronologically earliest seen value of X. | [arg_min()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/arg-min-aggfunction) | <pre>… \| summarize arg_min(TimeGenerated, *) by X</pre>
 latest(X) | Returns the chronologically latest seen value of X. | [arg_max()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/arg-max-aggfunction) | <pre>… \| summarize arg_max(TimeGenerated, *) by X</pre>
