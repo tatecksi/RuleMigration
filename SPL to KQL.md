@@ -27,7 +27,6 @@
 <br />
 <br />
 <br />
-<br />
 
 <h2><u>Common Eval Commands</u></h2>
 <br />
@@ -80,7 +79,6 @@
 <sub>**typeof(X)** | <sub>Returns a string representation of the field type. | <sub>typeof(12) | <sub>[gettype()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/gettypefunction) | <sub><pre>gettype(12)</pre>
 <sub>**urldecode(X)** | <sub>Returns the URL X decoded. | <sub>urldecode("http%3A%2F%2Fwww.<br />splunk.com%2Fdownload%3Fr%3D<br />header") | <sub>[url_decode](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/urldecodefunction) |<sub><pre>url_decode('https%3a%2f%2fwww.bing.com%2f')</pre>
 
-<br />
 <br />
 <br />
 <br />
