@@ -2,7 +2,7 @@
 <h2><u>Common Search Commands</u></h2>
 <br />
 
-<sub>SPL Command | Description | SPL Example | KQL | KQL Example | 
+<sub>SPL Command | Description | SPL Example | KQL | KQL Example <sub/>| 
 --- | --- | --- | --- | --- | 
 chart/ timechart | Returns results in a tabular output for (time-series) charting. | |[render](https://docs.microsoft.com/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer) |<pre> … \| render timechart</pre> 
 dedup | Removes subsequent results that match a specified criterion. | |[distinct](https://docs.microsoft.com/azure/data-explorer/kusto/query/distinctoperator) <br /> [summarize](https://docs.microsoft.com/azure/data-explorer/kusto/query/summarizeoperator)  | <pre>… \| summarize by Computer, EventID </pre>	
@@ -22,7 +22,7 @@ transaction | Groups search results into transactions. | sourcetype=MyLogTable t
 eventstats | Generates summary statistics from fields in your events and saves those statistics in a new field. | … \| bin span=1m _time<br />\|stats count AS count_i by _time, category <br />\| eventstats sum(count_i) as count_total by _time | Refer to example | <pre>let binSize = 1h;<br />let detail = SecurityEvent <br />\| summarize detail_count = count() by EventID, tbin = bin(TimeGenerated, binSize);<br />let summary = SecurityEvent<br />\| summarize sum_count = count() by tbin = bin(TimeGenerated, binSize);<br />detail <br />\| join kind=leftouter (summary) on tbin <br />\| project-away tbin1</pre> <br /> Or <br /><br /> <pre>let binSize = 1m;<br />SecurityEvent<br />\| where TimeGenerated >= ago(24h)<br />\| summarize TotalEvents = count() by EventID, groupBin =bin(TimeGenerated, binSize)<br />\|summarize make_list(EventID), make_list(TotalEvents), sum(TotalEvents) by groupBin<br />\| mvexpand list_EventID, list_TotalEvents</pre>
 streamstats | Find the cumulative sum | ... \| streamstats sum(bytes) as bytes _ total \| timechart | |
 anomalydetection | Find anomalies in the field | sourcetype=nasdaq earliest=-10y <br />\| anomalydetection Close _ Price | [series_decompose_anomalies()](https://docs.microsoft.com/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction) | <pre>let LookBackPeriod= 7d;<br />let disableAccountLogon=SignIn<br />\| where ResultType == "50057"<br />\| where ResultDescription =~ "User account is disabled. The account has been disabled by an administrator.";<br />disableAccountLogon<br />\| make-series Trend=count() default=0 on TimeGenerated in range(startofday(ago(LookBackPeriod)), now(), 1d)<br />\| extend (RSquare,Slope,Variance,RVariance,Interception,LineFit)=series_fit_line(Trend)<br />\| extend (anomalies,score) = series_decompose_anomalies(Trend)</pre>
-where | Filters search results using eval expressions. Used to  compare two different fields. | | [where](https://docs.microsoft.com/azure/data-explorer/kusto/query/whereoperator) | <pre>T \| where fruit=="apple"</pre><sub/>
+where | Filters search results using eval expressions. Used to  compare two different fields. | | [where](https://docs.microsoft.com/azure/data-explorer/kusto/query/whereoperator) | <pre>T \| where fruit=="apple"</pre>
  |  | | | | 
  
 <br />
