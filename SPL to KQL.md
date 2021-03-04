@@ -107,7 +107,7 @@
 <sub>**sum(X)** | <sub>Returns the sum of the values of the field X. | <sub>[sum()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sum-aggfunction) | <sub><pre>sum(X)</pre>
 <sub>**sumsq(X)** | <sub>Returns the sum of the squares of the values of the field X. | | |
 <sub>**values(X)** |<sub> Returns the list of all distinct values of the field X as a multi-value entry. The order of the values is alphabetical. | <sub>[make_set()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/makeset-aggfunction) | <sub><pre>…\| summarize r = make_set(X)</pre>
-<sub>**var(X)** | Returns the sample variance of the field X. | [variance()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/variance-aggfunction) | <sub><pre>variance(X)</pre>
+<sub>**var(X)** | <sub>Returns the sample variance of the field X. | <sub>[variance()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/variance-aggfunction) | <sub><pre>variance(X)</pre>
  
 <br />
 <br />
