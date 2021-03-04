@@ -91,23 +91,23 @@
 
 <sub>**SPL Command** | <sub>**Description** | <sub>**KQL** | <sub>**KQL Example** | 
 --- | --- | --- | --- | 
-<sub>avg(X) | <sub>Returns the average of the values of field X. | <sub>[avg()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/avg-aggfunction) | <sub><pre>avg(X)</pre>
-<sub>count(X) | <sub>Returns the number of occurrences of the field X. To indicate a specific field value to match, format X as eval(field="value"). | <sub>[count()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/count-aggfunction) | <sub><pre>summarize count()</pre>
-<sub>dc(X) | <sub>Returns the count of distinct values of the field X. | <sub>[dcount()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/dcount-aggfunction) | <sub><pre>…\| summarize countries=dcount(country) by continent</pre>
-<sub>earliest(X) | <sub>Returns the chronologically earliest seen value of X. | <sub>[arg_min()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/arg-min-aggfunction) | <sub><pre>… \| summarize arg_min(TimeGenerated, *) by X</pre>
-<sub>latest(X) | <sub>Returns the chronologically latest seen value of X. | <sub>[arg_max()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/arg-max-aggfunction) | <sub><pre>… \| summarize arg_max(TimeGenerated, *) by X</pre>
-<sub>max(X) | <sub>Returns the maximum value of the field X. If the values of X are non-numeric, the max is found from alphabetical ordering. | <sub>[max()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/max-aggfunction) | <sub><pre>…\| summarize max(X)</pre>
-<sub>median(X) | <sub>Returns the middle-most value of the field X. | <sub>[percentile()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/percentiles-aggfunction) | <sub><pre>…\| summarize percentile(X, 50)</pre>
-<sub>min(X) | <sub>Returns the minimum value of the field X. If the values of X are non-numeric, the min is found from alphabetical ordering. | <sub>[min()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/min-aggfunction) | <sub><pre>…\| summarize min(X)</pre>
-<sub>mode(X) | <sub>Returns the most frequent value of the field X. | <sub>[top-hitters()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/tophittersoperator) | <pre>…\| top-hitters 1 of Y by X</pre>
-<sub>perc<X>(Y) | <sub>Returns the X-th percentile value of the field Y. For example, perc5(total) returns the 5th percentile value of a field "total". | <sub>[percentile()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/percentiles-aggfunction) | <sub><pre>…\| summarize percentile(Y, 5)</pre>
-<sub>range(X) | <sub>Returns the difference between the max and min values of the field X. | | | 
-<sub>stdev(X) | <sub>Returns the sample standard deviation of the field X. | <sub>[stdev](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/stdev-aggfunction) | <sub><pre>stdev()</pre>
-<sub>stdevp(X) | <sub>Returns the population standard deviation of the field X. | <sub>[stdevp()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/stdevp-aggfunction) | <sub><pre>stdevp()</pre>
-<sub>sum(X) | <sub>Returns the sum of the values of the field X. | [sum()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sum-aggfunction) | <pre>sum(X)</pre>
-<sub>sumsq(X) | <sub>Returns the sum of the squares of the values of the field X. | | |
-<sub>values(X) |<sub> Returns the list of all distinct values of the field X as a multi-value entry. The order of the values is alphabetical. | <sub>[make_set()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/makeset-aggfunction) | <sub><pre>…\| summarize r = make_set(X)</pre>
-<sub>var(X) | Returns the sample variance of the field X. | [variance()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/variance-aggfunction) | <sub><pre>variance(X)</pre>
+<sub>**avg(X)** | <sub>Returns the average of the values of field X. | <sub>[avg()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/avg-aggfunction) | <sub><pre>avg(X)</pre>
+<sub>**count(X)** | <sub>Returns the number of occurrences of the field X. To indicate a specific field value to match, format X as eval(field="value"). | <sub>[count()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/count-aggfunction) | <sub><pre>summarize count()</pre>
+<sub>**dc(X)** | <sub>Returns the count of distinct values of the field X. | <sub>[dcount()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/dcount-aggfunction) | <sub><pre>…\| summarize countries=dcount(country) by continent</pre>
+<sub>**earliest(X)** | <sub>Returns the chronologically earliest seen value of X. | <sub>[arg_min()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/arg-min-aggfunction) | <sub><pre>… \| summarize arg_min(TimeGenerated, *) by X</pre>
+<sub>**latest(X)** | <sub>Returns the chronologically latest seen value of X. | <sub>[arg_max()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/arg-max-aggfunction) | <sub><pre>… \| summarize arg_max(TimeGenerated, *) by X</pre>
+<sub>**max(X)** | <sub>Returns the maximum value of the field X. If the values of X are non-numeric, the max is found from alphabetical ordering. | <sub>[max()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/max-aggfunction) | <sub><pre>…\| summarize max(X)</pre>
+<sub>**median(X)** | <sub>Returns the middle-most value of the field X. | <sub>[percentile()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/percentiles-aggfunction) | <sub><pre>…\| summarize percentile(X, 50)</pre>
+<sub>**min(X)** | <sub>Returns the minimum value of the field X. If the values of X are non-numeric, the min is found from alphabetical ordering. | <sub>[min()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/min-aggfunction) | <sub><pre>…\| summarize min(X)</pre>
+<sub>**mode(X)** | <sub>Returns the most frequent value of the field X. | <sub>[top-hitters()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/tophittersoperator) | <sub><pre>…\| top-hitters 1 of Y by X</pre>
+<sub>**perc<X>(Y)** | <sub>Returns the X-th percentile value of the field Y. For example, perc5(total) returns the 5th percentile value of a field "total". | <sub>[percentile()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/percentiles-aggfunction) | <sub><pre>…\| summarize percentile(Y, 5)</pre>
+<sub>**range(X)** | <sub>Returns the difference between the max and min values of the field X. | | | 
+<sub>**stdev(X)** | <sub>Returns the sample standard deviation of the field X. | <sub>[stdev](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/stdev-aggfunction) | <sub><pre>stdev()</pre>
+<sub>**stdevp(X)** | <sub>Returns the population standard deviation of the field X. | <sub>[stdevp()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/stdevp-aggfunction) | <sub><pre>stdevp()</pre>
+<sub>**sum(X)** | <sub>Returns the sum of the values of the field X. | [sum()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sum-aggfunction) | <pre>sum(X)</pre>
+<sub>**sumsq(X)** | <sub>Returns the sum of the squares of the values of the field X. | | |
+<sub>**values(X)** |<sub> Returns the list of all distinct values of the field X as a multi-value entry. The order of the values is alphabetical. | <sub>[make_set()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/makeset-aggfunction) | <sub><pre>…\| summarize r = make_set(X)</pre>
+<sub>**var(X)** | Returns the sample variance of the field X. | [variance()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/variance-aggfunction) | <sub><pre>variance(X)</pre>
  
 <br />
 <br />
