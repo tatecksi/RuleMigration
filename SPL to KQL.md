@@ -79,8 +79,6 @@
 <sub>**tostring(X,Y)** | Returns a field value of X as a string. If the value of X is a number, it reformats it as a string.<br /><br />  If X is a Boolean value,, reformats to "True" or "False".If X is a number, the second argument Y is optional and can either be "hex" (convert X to hexadecimal), "commas" (formats X with commas and 2 decimal places), or "duration" (converts seconds X to readable time format HH:MM:SS). | This example returns: foo=615 and foo2=00:10:15: <br />… \| eval foo=615 \| eval foo2 = tostring(foo, "duration") | [tostring()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/tostringfunction) | <pre>tostring(123)</pre>
 <sub>**typeof(X)** | Returns a string representation of the field type. | typeof(12) | [gettype()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/gettypefunction) | <pre>gettype(12)</pre>
 <sub>**urldecode(X)** | Returns the URL X decoded. | urldecode("http%3A%2F%2Fwww.splunk.com%2Fdownload%3Fr%3Dheader") | [url_decode](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/urldecodefunction) | <pre>url_decode('https%3a%2f%2fwww.bing.com%2f')</pre>
-<sub>validate\| (X,Y,…) | Given pairs of arguments, Boolean expressions X and strings Y, returns the string Y corresponding to the first expression X that evaluates to False and defaults to NULL if all are True. | validate(isint(port), "ERROR: Port is not an integer", port >= 1 AND port <= 65535, "ERROR: Port is out of range") | |
- |  | | | | 
 
 <br />
 <br />
