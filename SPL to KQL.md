@@ -99,8 +99,7 @@
 <sub>**min(X)** | <sub>Returns the minimum value of the field X. If the values of X are non-numeric, the min is found from alphabetical ordering. | <sub>[min()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/min-aggfunction) | <sub><pre>…\| summarize min(X)</pre>
 <sub>**mode(X)** | <sub>Returns the most frequent value of the field X. | <sub>[top-hitters()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/tophittersoperator) | <sub><pre>…\| top-hitters 1 of Y by X</pre>
 <sub>**perc<X>(Y)** | <sub>Returns the X-th percentile value of the field Y. For example, perc5(total) returns the 5th percentile value of a field "total". | <sub>[percentile()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/percentiles-aggfunction) | <sub><pre>…\| summarize percentile(Y, 5)</pre>
-<sub>**range(X)** | <sub>Returns the difference between the max and min values of the field X.  |<sub>[range()](https://docs.microsoft.com/azure/data-explorer/kusto/query/rangefunction)
- | <sub><pre>range(1, 3)</pre>
+<sub>**range(X)** | <sub>Returns the difference between the max and min values of the field X. |<sub>[range()](https://docs.microsoft.com/azure/data-explorer/kusto/query/rangefunction) | <sub><pre>range(1, 3)</pre>
 <sub>**stdev(X)** | <sub>Returns the sample standard deviation of the field X. | <sub>[stdev](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/stdev-aggfunction) | <sub><pre>stdev()</pre>
 <sub>**stdevp(X)** | <sub>Returns the population standard deviation of the field X. | <sub>[stdevp()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/stdevp-aggfunction) | <sub><pre>stdevp()</pre>
 <sub>**sum(X)** | <sub>Returns the sum of the values of the field X. | <sub>[sum()](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sum-aggfunction) | <sub><pre>sum(X)</pre>
